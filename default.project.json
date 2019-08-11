@@ -8,6 +8,27 @@
         "HttpEnabled": true
       }
     },
+
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+
+      "main": {
+        "$path": "main/main.server.lua"
+      }
+    },
+
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+
+        "main": {
+          "$path": "main/main.client.lua"
+        }
+      }
+    },
+
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
 
