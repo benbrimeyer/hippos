@@ -23,6 +23,7 @@ function newSystem:step(t, dt)
 		local primitive = getCache(entity, sprite.model)
 
 		primitive.Position = transform.position
+		primitive.Size = transform.size
 	end
 end
 
