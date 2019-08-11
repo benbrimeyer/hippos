@@ -33,15 +33,23 @@
       "$className": "ReplicatedStorage",
 
       "Packages": {
-        "$path": "Packages",
+        "$className": "Folder",
+
+        "Recs": {
+          "$path": "Packages/recs/src"
+        },
+
+        "t": {
+          "$path": "Packages/t/lib"
+        },
 
         "Hippo": {
           "$path": "src"
-        },
-
-        "RemoteEvent": {
-          "$className": "RemoteEvent"
         }
+      },
+
+      "RemoteEvent": {
+        "$className": "RemoteEvent"
       }
     }
   }
