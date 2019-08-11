@@ -1,0 +1,23 @@
+{
+  "name": "hippo",
+  "tree": {
+    "$className": "DataModel",
+    "HttpService": {
+      "$className": "HttpService",
+      "$properties": {
+        "HttpEnabled": true
+      }
+    },
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+
+      "Packages": {
+        "$path": "Packages",
+
+        "Hippo": {
+          "$path": "src"
+        }
+      }
+    }
+  }
+}
