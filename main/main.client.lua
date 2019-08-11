@@ -18,16 +18,3 @@ core:registerStepper(World.event(game:GetService("RunService").Stepped, {
 }))
 
 core:start()
-
--- Could have some test code here that creates a ball entity.
-local ballEntity = core.createEntity()
-core:batchAddComponents(ballEntity, "Transform", "Motion", "CanCollide", "Sprite")
-local motion = core:getComponent(ballEntity, "Motion")
-motion.acceleration = Vector3.new(1, 0, 0)
-
-local ball = Instance.new("Part")
-ball.Shape = Enum.PartType.Ball
-ball.Anchored = true
-ball.CanCollide = false
-local sprite = core:getComponent(ballEntity, "Sprite")
-sprite.model = ball
