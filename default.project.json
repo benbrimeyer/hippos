@@ -16,6 +16,10 @@
 
         "Hippo": {
           "$path": "src"
+        },
+
+        "RemoteEvent": {
+          "$className": "RemoteEvent"
         }
       }
     }
