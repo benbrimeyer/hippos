@@ -1,6 +1,6 @@
 --[[
 	NOTES
-	
+
 	-Resources are small helper modules
 	-Systems are game-specific managers and usually intertwined
 	-Services are generic standalone systems
@@ -31,7 +31,7 @@ _G.RegisterClass = function(classId, class)
 		warn("Class: ", classId, " is already registered!")
 		return
 	end
-	
+
 	--print('registered system: ', systemId)
 	Classes[classId] = class;
 end
@@ -46,7 +46,7 @@ _G.RegisterSystem = function(systemId, system)
 		warn("System: ", systemId, " is already registered!")
 		return
 	end
-	
+
 	--print('registered system: ', systemId)
 	Systems[systemId] = system;
 end
@@ -60,7 +60,7 @@ _G.RegisterResource = function(resourceId, resource)
 		warn("Resource: ", resourceId, " is already registered!")
 		return
 	end
-	
+
 	Resources[resourceId] = resource;
 end
 -----
@@ -73,7 +73,7 @@ _G.RegisterBin = function(binId, bin)
 		warn("Bin: ", binId, " is already registered!")
 		return
 	end
-	
+
 	Bins[binId] = bin;
 end
 -----
@@ -86,7 +86,7 @@ _G.RegisterService = function(serviceId, service)
 		warn("Service: ", serviceId, " is already registered!")
 		return
 	end
-	
+
 	Services[serviceId] = service
 end
 
@@ -95,25 +95,15 @@ _G.WrapService = function(serviceId, metaTable)
 		warn("Service: ", serviceId, " is already wrapped!")
 		return
 	end
-	
+
 	Services[serviceId] = setmetatable(game:GetService(serviceId), {__index = metaTable})
 end
 
 _G.RegisterSystem("GlobalSpace", GlobalSpace)
 ----------------------------------------
---Initialize System->Services modules
-for _, Service in pairs(script.Parent.Services:GetChildren()) do
-	_G.RegisterService(Service.Name, require(Service))
-end
-
 --Initialize System->Resources modules
 for _, Service in pairs(script.Parent.Resources:GetChildren()) do
 	_G.RegisterResource(Service.Name, require(Service))
-end
-
---Initialize System->Classes modules
-for _, Service in pairs(script.Parent.Classes:GetChildren()) do
-	_G.RegisterClass(Service.Name, require(Service))
 end
 ----------------------------------------
 return GlobalSpace
